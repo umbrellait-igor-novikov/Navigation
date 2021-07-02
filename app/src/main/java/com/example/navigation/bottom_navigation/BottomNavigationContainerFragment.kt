@@ -1,6 +1,7 @@
 package com.example.navigation.bottom_navigation
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -13,7 +14,7 @@ import com.example.navigation.bottom_navigation.content_fragments.BottomNavigati
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-class BottomNavigationFragment : Fragment(R.layout.fragment_bottom_navigation) {
+class BottomNavigationContainerFragment : Fragment(R.layout.fragment_bottom_navigation) {
     lateinit var bottomNavigation: BottomNavigationView
 
     override fun onCreateView(
@@ -29,6 +30,7 @@ class BottomNavigationFragment : Fragment(R.layout.fragment_bottom_navigation) {
 
         bottomNavigation = view!!.findViewById(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            Log.i(TAG, item.itemId.toString())
             when (item.itemId) {
                 R.id.to_home -> {
                     parentFragmentManager.beginTransaction().replace(
@@ -55,6 +57,10 @@ class BottomNavigationFragment : Fragment(R.layout.fragment_bottom_navigation) {
             }
         }
         return view
+    }
+
+    companion object {
+        private const val TAG = "BottomNavigationContainer"
     }
 
 }
