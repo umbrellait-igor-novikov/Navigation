@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/nav_camara"
+        android:id="@+id/nav_view_pager"
         android:title="@string/view_pager" />
     <item
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_bottom_navigation"
         android:title="@string/bottom_navigation" />
     <item
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_bottom_sheet"
         android:title="@string/bottom_sheet" />
 </menu>
