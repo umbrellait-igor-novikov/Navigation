@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/to_home"
         android:icon="@drawable/ic_home"
         android:state_checked="false"
         android:title="1" />
     <item
-        android:icon="@drawable/ic_view"
+        android:id="@+id/squares"
+        android:icon="@drawable/ic_squares"
         android:state_checked="true"
         android:title="2" />
 
     <item
+        android:id="@+id/notification"
         android:state_checked="true"
         android:icon="@drawable/ic_notification"
         android:title="3" />
