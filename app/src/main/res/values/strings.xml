@@ -8,4 +8,7 @@
     <string name="bottom_sheet_peek">Bottom sheet peek</string>
     <string name="bottom_sheet_content">Bottom sheet content</string>
     <string name="bottom_sheet_container">Bottom sheet container</string>
+    <string name="bottom_sheet">Bottom sheet</string>
+    <string name="bottom_navigation">Bottom navigation</string>
+    <string name="view_pager">View pager</string>
 </resources>
