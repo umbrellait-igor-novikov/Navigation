@@ -5,4 +5,7 @@
     <string name="bottom_blank_fragment_1">Bottom blank fragment 1</string>
     <string name="bottom_blank_fragment_2">Bottom blank fragment 2</string>
     <string name="bottom_blank_fragment_3">Bottom blank fragment 3</string>
+    <string name="bottom_sheet_peek">Bottom sheet peek</string>
+    <string name="bottom_sheet_content">Bottom sheet content</string>
+    <string name="bottom_sheet_container">Bottom sheet container</string>
 </resources>

@@ -2,7 +2,7 @@ package com.example.navigation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.navigation.bottom_navigation.BottomNavigationFragment
+import com.example.navigation.bottom_sheet.BottomSheetContainerFragment
 
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.host_fragment, BottomNavigationFragment()).commit()
+                .add(R.id.host_fragment, BottomSheetContainerFragment()).commit()
         }
     }
 }
