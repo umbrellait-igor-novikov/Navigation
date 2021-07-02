@@ -18,7 +18,7 @@ class ViewPagerContentFragment : Fragment(R.layout.fragment_content_view_pager){
         super.onViewCreated(view, savedInstanceState)
         arguments?.takeIf {it.containsKey(ARG_OBJECT)}?.apply {
             val textView: TextView = view.findViewById(R.id.ViewPagerContentTextView)
-            textView.text = getInt(ARG_OBJECT).toString()
+            textView.text = "Tab fragment №${getInt(ARG_OBJECT).toString()}"
         }
     }
 }
