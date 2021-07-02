@@ -13,21 +13,16 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class BottomSheetContainerFragment : Fragment(R.layout.fragment_container_bottom_sheet) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-//        val bottomSheetLayout = view.findViewById<ConstraintLayout>(R.id.bottom_sheet)
-//        val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetLayout!!)
-//
-//        val showBottomSheetButton = view?.findViewById<Button>(R.id.show_bottom_sheet_button)
-//
-//        showBottomSheetButton?.setOnClickListener {
-//
-//        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val bottomSheetLayout = view.findViewById<LinearLayout>(R.id.bottom_sheet)
+        val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetLayout)
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+        val showBottomSheetButton = view.findViewById<Button>(R.id.show_bottom_sheet_button)
 
-        return super.onCreateView(inflater, container, savedInstanceState)
+        showBottomSheetButton.setOnClickListener {
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        }
     }
 
 }
