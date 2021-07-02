@@ -21,4 +21,12 @@ class FullLoginFragment : Fragment(R.layout.fragment_full_login) {
             parentFragmentManager.beginTransaction().replace(R.id.host_fragment, SignUpFragment()).addToBackStack(null).commit()
         }
     }
+    companion object{
+        fun newInstance():FullLoginFragment{
+            val fragment = FullLoginFragment()
+            val arguments = Bundle()
+            fragment.arguments = arguments
+            return fragment
+        }
+    }
 }

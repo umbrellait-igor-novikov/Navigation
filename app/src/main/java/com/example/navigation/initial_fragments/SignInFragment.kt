@@ -12,7 +12,10 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
         super.onViewCreated(view, savedInstanceState)
         val signInToMainButton = view.findViewById<Button>(R.id.button_from_sign_in_to_main)
         signInToMainButton.setOnClickListener {
-            parentFragmentManager.beginTransaction().replace(R.id.host_fragment, BottomNavigationContainerFragment()).addToBackStack(null).commit()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.host_fragment, BottomNavigationContainerFragment())
+                .addToBackStack(null)
+                .commit()
         }
     }
 }

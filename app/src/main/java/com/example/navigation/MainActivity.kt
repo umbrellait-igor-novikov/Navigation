@@ -23,7 +23,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main),NavigationView.On
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.host_fragment, FullLoginFragment()).commit()
+                .add(R.id.host_fragment, FullLoginFragment.newInstance())
+                .addToBackStack(null)
+                .commit()
         }
     }
 
