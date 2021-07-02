@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.navigation.bottom_navigation.BottomNavigationContainerFragment
 import com.example.navigation.bottom_sheet.BottomSheetContainerFragment
+import com.example.navigation.initial_fragments.FullLoginFragment
 import com.example.navigation.view_pager.ViewPagerContainerFragment
 import com.google.android.material.navigation.NavigationView
 
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main),NavigationView.On
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.host_fragment, BottomNavigationContainerFragment()).commit()
+                .add(R.id.host_fragment, FullLoginFragment()).commit()
         }
     }
 
