@@ -16,6 +16,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
                 .replace(R.id.host_fragment, BottomNavigationContainerFragment())
                 .addToBackStack(null)
                 .commit()
+
         }
     }
 }

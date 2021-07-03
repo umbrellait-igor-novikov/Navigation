@@ -51,6 +51,15 @@ class MainActivity : AppCompatActivity(R.layout.activity_main),NavigationView.On
         }
     }
 
+    override fun onBackPressed() {
+        when(supportFragmentManager.findFragmentById(R.id.host_fragment)){
+            is BottomNavigationContainerFragment,is ViewPagerContainerFragment,is BottomSheetContainerFragment -> finish()
+            else -> {
+                super.onBackPressed()
+            }
+        }
+    }
+
     companion object {
         private const val TAG = "MainActivity"
     }
