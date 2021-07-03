@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.example.navigation.bottom_navigation.BottomNavigationContainerFragment
 import com.example.navigation.bottom_sheet.BottomSheetContainerFragment
 import com.example.navigation.initial_fragments.FullLoginFragment
+import com.example.navigation.initial_fragments.SignInFragment
 import com.example.navigation.view_pager.ViewPagerContainerFragment
 import com.google.android.material.navigation.NavigationView
 
@@ -26,6 +27,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main),NavigationView.On
                 .add(R.id.host_fragment, FullLoginFragment.newInstance())
                 .addToBackStack(null)
                 .commit()
+        }
+
+        supportFragmentManager.addOnBackStackChangedListener {
+            Log.i(TAG, "BackStack - ${supportFragmentManager.backStackEntryCount}")
         }
     }
 
@@ -51,14 +56,23 @@ class MainActivity : AppCompatActivity(R.layout.activity_main),NavigationView.On
         }
     }
 
-    override fun onBackPressed() {
+    override fun onBackPressed() =
         when(supportFragmentManager.findFragmentById(R.id.host_fragment)){
             is BottomNavigationContainerFragment,is ViewPagerContainerFragment,is BottomSheetContainerFragment -> finish()
+            is SignInFragment -> {
+                if (supportFragmentManager.backStackEntryCount==3) {
+                    for (entry in 2..supportFragmentManager.backStackEntryCount) {
+                        supportFragmentManager.popBackStack()
+                    }
+                }
+                else {
+                    super.onBackPressed()
+                }
+            }
             else -> {
                 super.onBackPressed()
             }
         }
-    }
 
     companion object {
         private const val TAG = "MainActivity"

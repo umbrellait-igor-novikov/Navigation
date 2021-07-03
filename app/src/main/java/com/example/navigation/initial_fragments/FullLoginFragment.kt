@@ -14,16 +14,16 @@ class FullLoginFragment : Fragment(R.layout.fragment_full_login) {
         val signInButton = view.findViewById<Button>(R.id.button_sign_in)
         signInButton.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.host_fragment, SignInFragment())
-                .addToBackStack(null)
+                .replace(R.id.host_fragment, SignInFragment(),"SignInTag")
+                .addToBackStack("SignInName")
                 .commit()
         }
 
         val signUpButton = view.findViewById<Button>(R.id.button_sign_up)
         signUpButton.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.host_fragment, SignUpFragment())
-                .addToBackStack(null)
+                .replace(R.id.host_fragment, SignUpFragment(),"SignUpTag")
+                .addToBackStack("SignUpName")
                 .commit()
         }
     }
