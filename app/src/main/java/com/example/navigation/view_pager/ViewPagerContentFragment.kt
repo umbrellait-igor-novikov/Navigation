@@ -16,9 +16,10 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 class ViewPagerContentFragment : Fragment(R.layout.fragment_content_view_pager){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         arguments?.takeIf {it.containsKey(ARG_OBJECT)}?.apply {
             val textView: TextView = view.findViewById(R.id.ViewPagerContentTextView)
-            textView.text = "Tab fragment №${getInt(ARG_OBJECT).toString()}"
+            textView.text = "Tab fragment №${getInt(ARG_OBJECT)}"
         }
     }
 }

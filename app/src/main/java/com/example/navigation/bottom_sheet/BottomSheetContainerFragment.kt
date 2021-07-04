@@ -15,6 +15,7 @@ class BottomSheetContainerFragment : Fragment(R.layout.fragment_container_bottom
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val bottomSheetLayout = view.findViewById<LinearLayout>(R.id.bottom_sheet)
         val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetLayout)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN

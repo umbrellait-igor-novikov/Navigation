@@ -16,18 +16,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class BottomNavigationContainerFragment : Fragment(R.layout.fragment_bottom_navigation) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = super.onCreateView(inflater, container, savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         parentFragmentManager.beginTransaction().add(
             R.id.bottom_navigation_fragment_content,
             BottomNavigationContentFragment1()
         ).commit()
 
-       val bottomNavigation:BottomNavigationView = view!!.findViewById(R.id.bottom_navigation)
+        val bottomNavigation:BottomNavigationView = view.findViewById(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener { item ->
             Log.i(TAG, item.itemId.toString())
             when (item.itemId) {
@@ -55,7 +52,6 @@ class BottomNavigationContainerFragment : Fragment(R.layout.fragment_bottom_navi
                 else -> false
             }
         }
-        return view
     }
 
     companion object {

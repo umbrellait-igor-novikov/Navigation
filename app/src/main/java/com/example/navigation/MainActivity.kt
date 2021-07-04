@@ -3,6 +3,7 @@ package com.example.navigation
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.navigation.bottom_navigation.BottomNavigationContainerFragment
@@ -36,18 +37,22 @@ class MainActivity : AppCompatActivity(R.layout.activity_main),
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         Log.i(TAG, item.itemId.toString())
+        val drawerLayout:DrawerLayout = findViewById(R.id.drawer_layout)
         return when (item.itemId) {
             R.id.nav_view_pager -> {
+                drawerLayout.closeDrawers()
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.host_fragment, ViewPagerContainerFragment()).commit()
                 true
             }
             R.id.nav_bottom_navigation -> {
+                drawerLayout.closeDrawers()
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.host_fragment, BottomNavigationContainerFragment()).commit()
                 true
             }
             R.id.nav_bottom_sheet -> {
+                drawerLayout.closeDrawers()
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.host_fragment, BottomSheetContainerFragment()).commit()
                 true
