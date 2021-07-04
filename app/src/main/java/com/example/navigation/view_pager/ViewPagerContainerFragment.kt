@@ -21,6 +21,7 @@ class ViewPagerContainerFragment : Fragment(R.layout.fragment_container_view_pag
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         viewPagerAdapter = ViewPagerAdapter(this)
         viewPager = view.findViewById(R.id.view_pager)
         viewPager.adapter = viewPagerAdapter
