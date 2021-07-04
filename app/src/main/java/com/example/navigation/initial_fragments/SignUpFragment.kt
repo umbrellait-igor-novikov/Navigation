@@ -12,6 +12,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         super.onViewCreated(view, savedInstanceState)
         val signUpToSignInButton = view.findViewById<Button>(R.id.button_from_sign_up_to_sign_in)
         signUpToSignInButton.setOnClickListener {
+            parentFragmentManager.popBackStack()
             parentFragmentManager.beginTransaction()
                 .replace(R.id.host_fragment, SignInFragment(),"SignInTag")
                 .addToBackStack(null)

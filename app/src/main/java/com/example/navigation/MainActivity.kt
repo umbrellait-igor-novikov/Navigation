@@ -13,13 +13,13 @@ import com.example.navigation.view_pager.ViewPagerContainerFragment
 import com.google.android.material.navigation.NavigationView
 
 
-class MainActivity : AppCompatActivity(R.layout.activity_main),NavigationView.OnNavigationItemSelectedListener {
-
+class MainActivity : AppCompatActivity(R.layout.activity_main),
+    NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val navigationView:NavigationView = findViewById(R.id.nav_view)
+        val navigationView: NavigationView = findViewById(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
 
         if (savedInstanceState == null) {
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main),NavigationView.On
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         Log.i(TAG, item.itemId.toString())
-        return when(item.itemId){
+        return when (item.itemId) {
             R.id.nav_view_pager -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.host_fragment, ViewPagerContainerFragment()).commit()
@@ -57,18 +57,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main),NavigationView.On
     }
 
     override fun onBackPressed() =
-        when(supportFragmentManager.findFragmentById(R.id.host_fragment)){
-            is BottomNavigationContainerFragment,is ViewPagerContainerFragment,is BottomSheetContainerFragment -> finish()
-            is SignInFragment -> {
-                if (supportFragmentManager.backStackEntryCount==3) {
-                    for (entry in 2..supportFragmentManager.backStackEntryCount) {
-                        supportFragmentManager.popBackStack()
-                    }
-                }
-                else {
-                    super.onBackPressed()
-                }
-            }
+        when (supportFragmentManager.findFragmentById(R.id.host_fragment)) {
+            is BottomNavigationContainerFragment, is ViewPagerContainerFragment, is BottomSheetContainerFragment -> finish()
             else -> {
                 super.onBackPressed()
             }
