@@ -2,11 +2,8 @@ package com.example.navigation.bottom_navigation
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.navigation.R
 import com.example.navigation.bottom_navigation.content_fragments.BottomNavigationContentFragment1
 import com.example.navigation.bottom_navigation.content_fragments.BottomNavigationContentFragment2

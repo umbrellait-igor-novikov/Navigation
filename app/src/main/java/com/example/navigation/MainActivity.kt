@@ -3,13 +3,11 @@ package com.example.navigation
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.navigation.bottom_navigation.BottomNavigationContainerFragment
 import com.example.navigation.bottom_sheet.BottomSheetContainerFragment
 import com.example.navigation.initial_fragments.FullLoginFragment
-import com.example.navigation.initial_fragments.SignInFragment
 import com.example.navigation.view_pager.ViewPagerContainerFragment
 import com.google.android.material.navigation.NavigationView
 
